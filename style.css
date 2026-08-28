@@ -790,3 +790,12 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
       gap: 18px;
     }
   }
+
+.hero-section {
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+#education {
+  padding-top: 140px;
+}
