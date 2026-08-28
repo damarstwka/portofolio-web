@@ -1,11 +1,11 @@
 :root {
-  --bg-dark: #080e1a;
-  --card-bg: #111827;
-  --primary: #38bdf8;
+  --bg-dark: #000000;
+  --card-bg: #070a0f;
+  --primary: #e0e8eb;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --accent-green: #22c55e;
-  --border-color: #1e293b;
+  --border-color: #040608;
   --radius: 12px;
 }
 
@@ -40,7 +40,7 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(3, 7, 18, 0.80);
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
@@ -132,12 +132,33 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
 }
 
 .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
   margin-bottom: 15px;
+  letter-spacing: 0.3px;
+}
+
+.status-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-green);
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.75); }
 }
 
 .hero-title {
@@ -245,15 +266,41 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
 }
 
 .pill {
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
+display: inline-flex;
+align-items: center;
+padding: 4px 10px;
+border-radius: 6px;
+font-size: 0.72rem;
+font-weight: 700;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid var(--border-color);
+border-left-width: 3px;
+transition: transform 0.2 ease;
 }
 
-.pill-blue { background: rgba(56, 189, 248, 0.2); color: var(--primary); }
-.pill-green { background: rgba(34, 197, 94, 0.2); color: var(--accent-green); }
-.pill-gray { background: rgba(148, 163, 184, 0.2); color: var(--text-muted); }
+.pill-hover {
+  transform: translateX();
+}
+
+.pill-blue {
+  border-left-color: var(--primary);
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.pill-green {
+  border-left-color: var(--accent-green);
+  color: var(--accent-green);
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.pill-gray {
+  border-left-color: var(--text-muted);
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.06);
+}
 
 .contact-card {
   cursor: pointer;
@@ -315,7 +362,7 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
 .footer {
   text-align: center;
   padding: 35px 0;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(3, 7, 18, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-color);
@@ -791,11 +838,11 @@ background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px
     }
   }
 
-.hero-section {
-  padding-top: 140px;
-  padding-bottom: 100px;
-}
+  .hero-section {
+    padding-top: 140px;
+    padding-bottom: 100px;
+  }
 
-#education {
-  padding-top: 140px;
-}
+  #education {
+    padding-top: 140px;
+  }
